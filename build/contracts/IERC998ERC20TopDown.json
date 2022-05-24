@@ -1,0 +1,1997 @@
+{
+  "contractName": "IERC998ERC20TopDown",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_erc20Contract",
+          "type": "address"
+        }
+      ],
+      "name": "DaiSupported",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_erc20Contract",
+          "type": "address"
+        }
+      ],
+      "name": "NotSupportedDai",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_erc20Contract",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "ReceivedERC20",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_erc20Contract",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "TransferERC20",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "__erc20Contract",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOfERC20",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_erc20Contract",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "getERC20",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_erc20Contract",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferERC20",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "tokenFallback",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_erc20Contract\",\"type\":\"address\"}],\"name\":\"DaiSupported\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_erc20Contract\",\"type\":\"address\"}],\"name\":\"NotSupportedDai\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_erc20Contract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"ReceivedERC20\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_erc20Contract\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"TransferERC20\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"__erc20Contract\",\"type\":\"address\"}],\"name\":\"balanceOfERC20\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_erc20Contract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"getERC20\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"tokenFallback\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_erc20Contract\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferERC20\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/interfaces/IERC998ERC20TopDown.sol\":\"IERC998ERC20TopDown\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/interfaces/IERC998ERC20TopDown.sol\":{\"keccak256\":\"0xd6156196e516d9b9e419c5221727301ac4aeeb51bca7514f82b16712cb24024e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://04e336371d191e47548b16db4e7bf40e970b37a817ed70b0e7f6b806d67bbe3a\",\"dweb:/ipfs/QmZmZKigrz6xU4obYEmegjJSxVGoxRVuz4JqiCfJxrPgnM\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.0;\n\ninterface IERC998ERC20TopDown {\n    event ReceivedERC20(address indexed _from, uint256 indexed _tokenId, address indexed _erc20Contract, uint256 _value);\n    event TransferERC20(uint256 indexed _tokenId, address indexed _to, address indexed _erc20Contract, uint256 _value);\n    event NotSupportedDai(address _erc20Contract);\n    event DaiSupported(address _erc20Contract);\n    function balanceOfERC20(uint256 _tokenId, address __erc20Contract) external view returns (uint256);\n    function getERC20(address _from, uint256 _tokenId, address _erc20Contract, uint256 _value) external;\n    function transferERC20(uint256 _tokenId, address _to, address _erc20Contract, uint256 _value) external;\n    // function transferERC223(uint256 _tokenId, address _to, address _erc223Contract, uint256 _value, bytes calldata _data) external;\n    function tokenFallback(address _from, uint256 _value, bytes calldata _data) external;\n}",
+  "sourcePath": "/Users/sanskarkhare/Desktop/Pandora/Sanskar-workgroup/contracts/interfaces/IERC998ERC20TopDown.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/interfaces/IERC998ERC20TopDown.sol",
+    "exportedSymbols": {
+      "IERC998ERC20TopDown": [
+        2409
+      ]
+    },
+    "id": 2410,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2340,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 2409,
+        "linearizedBaseContracts": [
+          2409
+        ],
+        "name": "IERC998ERC20TopDown",
+        "nameLocation": "67:19:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "id": 2350,
+            "name": "ReceivedERC20",
+            "nameLocation": "99:13:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2349,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2342,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "129:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2350,
+                  "src": "113:21:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2341,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "113:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2344,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "152:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2350,
+                  "src": "136:24:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2343,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "136:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2346,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "178:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2350,
+                  "src": "162:30:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2345,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "162:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2348,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nameLocation": "202:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2350,
+                  "src": "194:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2347,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "194:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "112:97:13"
+            },
+            "src": "93:117:13"
+          },
+          {
+            "anonymous": false,
+            "id": 2360,
+            "name": "TransferERC20",
+            "nameLocation": "221:13:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2359,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2352,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "251:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2360,
+                  "src": "235:24:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2351,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2354,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "277:3:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2360,
+                  "src": "261:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2353,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "261:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2356,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "298:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2360,
+                  "src": "282:30:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2355,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "282:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2358,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nameLocation": "322:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2360,
+                  "src": "314:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2357,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "314:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:95:13"
+            },
+            "src": "215:115:13"
+          },
+          {
+            "anonymous": false,
+            "id": 2364,
+            "name": "NotSupportedDai",
+            "nameLocation": "341:15:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2363,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2362,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "365:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2364,
+                  "src": "357:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2361,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "357:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "356:24:13"
+            },
+            "src": "335:46:13"
+          },
+          {
+            "anonymous": false,
+            "id": 2368,
+            "name": "DaiSupported",
+            "nameLocation": "392:12:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2367,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2366,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "413:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2368,
+                  "src": "405:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2365,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "405:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "404:24:13"
+            },
+            "src": "386:43:13"
+          },
+          {
+            "functionSelector": "e226ed22",
+            "id": 2377,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "balanceOfERC20",
+            "nameLocation": "443:14:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2373,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2370,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "466:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2377,
+                  "src": "458:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2369,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "458:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2372,
+                  "mutability": "mutable",
+                  "name": "__erc20Contract",
+                  "nameLocation": "484:15:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2377,
+                  "src": "476:23:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2371,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "476:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "457:43:13"
+            },
+            "returnParameters": {
+              "id": 2376,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2375,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2377,
+                  "src": "524:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2374,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "523:9:13"
+            },
+            "scope": 2409,
+            "src": "434:99:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "07cff6f2",
+            "id": 2388,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getERC20",
+            "nameLocation": "547:8:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2386,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2379,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "564:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2388,
+                  "src": "556:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2378,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "556:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2381,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "579:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2388,
+                  "src": "571:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2380,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "571:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2383,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "597:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2388,
+                  "src": "589:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2382,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "589:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2385,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nameLocation": "621:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2388,
+                  "src": "613:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2384,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "613:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "555:73:13"
+            },
+            "returnParameters": {
+              "id": 2387,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "637:0:13"
+            },
+            "scope": 2409,
+            "src": "538:100:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "830ef41b",
+            "id": 2399,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferERC20",
+            "nameLocation": "652:13:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2397,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2390,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "674:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2399,
+                  "src": "666:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2389,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "666:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2392,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "692:3:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2399,
+                  "src": "684:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2391,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "684:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2394,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "705:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2399,
+                  "src": "697:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2393,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "697:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2396,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nameLocation": "729:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2399,
+                  "src": "721:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2395,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "721:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "665:71:13"
+            },
+            "returnParameters": {
+              "id": 2398,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "745:0:13"
+            },
+            "scope": 2409,
+            "src": "643:103:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "c0ee0b8a",
+            "id": 2408,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokenFallback",
+            "nameLocation": "895:13:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2406,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2401,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "917:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2408,
+                  "src": "909:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2400,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "909:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2403,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nameLocation": "932:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2408,
+                  "src": "924:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2402,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "924:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2405,
+                  "mutability": "mutable",
+                  "name": "_data",
+                  "nameLocation": "955:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2408,
+                  "src": "940:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2404,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "940:5:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "908:53:13"
+            },
+            "returnParameters": {
+              "id": 2407,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "970:0:13"
+            },
+            "scope": 2409,
+            "src": "886:85:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2410,
+        "src": "57:916:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:941:13"
+  },
+  "legacyAST": {
+    "absolutePath": "project:/contracts/interfaces/IERC998ERC20TopDown.sol",
+    "exportedSymbols": {
+      "IERC998ERC20TopDown": [
+        2409
+      ]
+    },
+    "id": 2410,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2340,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 2409,
+        "linearizedBaseContracts": [
+          2409
+        ],
+        "name": "IERC998ERC20TopDown",
+        "nameLocation": "67:19:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "id": 2350,
+            "name": "ReceivedERC20",
+            "nameLocation": "99:13:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2349,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2342,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "129:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2350,
+                  "src": "113:21:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2341,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "113:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2344,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "152:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2350,
+                  "src": "136:24:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2343,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "136:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2346,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "178:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2350,
+                  "src": "162:30:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2345,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "162:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2348,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nameLocation": "202:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2350,
+                  "src": "194:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2347,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "194:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "112:97:13"
+            },
+            "src": "93:117:13"
+          },
+          {
+            "anonymous": false,
+            "id": 2360,
+            "name": "TransferERC20",
+            "nameLocation": "221:13:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2359,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2352,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "251:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2360,
+                  "src": "235:24:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2351,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "235:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2354,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "277:3:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2360,
+                  "src": "261:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2353,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "261:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2356,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "298:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2360,
+                  "src": "282:30:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2355,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "282:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2358,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nameLocation": "322:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2360,
+                  "src": "314:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2357,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "314:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:95:13"
+            },
+            "src": "215:115:13"
+          },
+          {
+            "anonymous": false,
+            "id": 2364,
+            "name": "NotSupportedDai",
+            "nameLocation": "341:15:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2363,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2362,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "365:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2364,
+                  "src": "357:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2361,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "357:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "356:24:13"
+            },
+            "src": "335:46:13"
+          },
+          {
+            "anonymous": false,
+            "id": 2368,
+            "name": "DaiSupported",
+            "nameLocation": "392:12:13",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2367,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2366,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "413:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2368,
+                  "src": "405:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2365,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "405:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "404:24:13"
+            },
+            "src": "386:43:13"
+          },
+          {
+            "functionSelector": "e226ed22",
+            "id": 2377,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "balanceOfERC20",
+            "nameLocation": "443:14:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2373,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2370,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "466:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2377,
+                  "src": "458:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2369,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "458:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2372,
+                  "mutability": "mutable",
+                  "name": "__erc20Contract",
+                  "nameLocation": "484:15:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2377,
+                  "src": "476:23:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2371,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "476:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "457:43:13"
+            },
+            "returnParameters": {
+              "id": 2376,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2375,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2377,
+                  "src": "524:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2374,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "524:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "523:9:13"
+            },
+            "scope": 2409,
+            "src": "434:99:13",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "07cff6f2",
+            "id": 2388,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getERC20",
+            "nameLocation": "547:8:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2386,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2379,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "564:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2388,
+                  "src": "556:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2378,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "556:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2381,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "579:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2388,
+                  "src": "571:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2380,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "571:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2383,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "597:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2388,
+                  "src": "589:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2382,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "589:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2385,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nameLocation": "621:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2388,
+                  "src": "613:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2384,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "613:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "555:73:13"
+            },
+            "returnParameters": {
+              "id": 2387,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "637:0:13"
+            },
+            "scope": 2409,
+            "src": "538:100:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "830ef41b",
+            "id": 2399,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "transferERC20",
+            "nameLocation": "652:13:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2397,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2390,
+                  "mutability": "mutable",
+                  "name": "_tokenId",
+                  "nameLocation": "674:8:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2399,
+                  "src": "666:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2389,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "666:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2392,
+                  "mutability": "mutable",
+                  "name": "_to",
+                  "nameLocation": "692:3:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2399,
+                  "src": "684:11:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2391,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "684:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2394,
+                  "mutability": "mutable",
+                  "name": "_erc20Contract",
+                  "nameLocation": "705:14:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2399,
+                  "src": "697:22:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2393,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "697:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2396,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nameLocation": "729:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2399,
+                  "src": "721:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2395,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "721:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "665:71:13"
+            },
+            "returnParameters": {
+              "id": 2398,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "745:0:13"
+            },
+            "scope": 2409,
+            "src": "643:103:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "c0ee0b8a",
+            "id": 2408,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "tokenFallback",
+            "nameLocation": "895:13:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2406,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2401,
+                  "mutability": "mutable",
+                  "name": "_from",
+                  "nameLocation": "917:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2408,
+                  "src": "909:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2400,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "909:7:13",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2403,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nameLocation": "932:6:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2408,
+                  "src": "924:14:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2402,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "924:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2405,
+                  "mutability": "mutable",
+                  "name": "_data",
+                  "nameLocation": "955:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2408,
+                  "src": "940:20:13",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2404,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "940:5:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "908:53:13"
+            },
+            "returnParameters": {
+              "id": 2407,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "970:0:13"
+            },
+            "scope": 2409,
+            "src": "886:85:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2410,
+        "src": "57:916:13",
+        "usedErrors": []
+      }
+    ],
+    "src": "32:941:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.7+commit.e28d00a7.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-05-24T07:06:28.522Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.6.0",
+    "@truffle/hdwallet-provider": "^2.0.5",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.0",
+    "web3": "^1.7.3"
+  },
+  "devDependencies": {
+    "ethereum-waffle": "^3.4.4"
+  }
+}
